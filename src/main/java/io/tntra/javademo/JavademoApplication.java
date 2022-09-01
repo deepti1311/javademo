@@ -6,6 +6,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JavademoApplication {
 
+
+
+
+
+    public static <T> void PrintArray(T[] array){
+
+        for (T t : array) {
+             System.out.printf("%s ",t);
+
+        }
+        System.out.println();
+
+    }
+
+	
 	public static void main(String[] args) {
 		SpringApplication.run(JavademoApplication.class, args);
 
@@ -28,10 +43,35 @@ public class JavademoApplication {
 		// obj4.print();
 
 
-		Sum<Integer> a=new Sum<>();
-		a.addNo(20,49);
-		System.out.println("addition of two numbers is : "+a.getsum());
+		// Sum<Integer> a=new Sum<>();
+		// a.addNo(20,49);
+		// System.out.println("addition of two numbers is : "+a.getsum());
+
+
+
+
+
+
+
+
+
+		Integer[] array1={1,2,2,3,4,3};
+
+		Character[] array2={'H','i'};
+
+		// double[] array3={1.2,3.4};
+
+		System.out.println("array created using "+array1.getClass().getName());
+		PrintArray(array1);
+
+		System.out.println("array created using "+array2.getClass().getName());
+		PrintArray(array2);
+
+		// System.out.println("array created using "+array3.getClass().getName());
+		// PrintArray(array3);   //  The method PrintArray(T[]) in the type JavademoApplication is not applicable for the arguments (double[])
 	}
+
+
 
 }
 
@@ -58,20 +98,20 @@ class Ex<T,U> {
 }
 
 
-class Sum<T>{
+// class Sum<T>{
 
-	private T a,b,sum;
+// 	private T a,b,sum;
 
-	public void addNo(T a,T b){
-		this.a=a;
-		this.b=b;
+// 	public void addNo(T a,T b){
+// 		this.a=a;
+// 		this.b=b;
 
-	}
-	public T getsum(){
-		sum=a+b;   // ERROR: The operator + is undefined for the argument type(s) T, T
-		return sum;
-	}
-}
+// 	}
+// 	public T getsum(){
+// 		sum=a+b;   // ERROR: The operator + is undefined for the argument type(s) T, T
+// 		return sum;
+// 	}
+// }
 
 
 
